@@ -1,0 +1,387 @@
+/* Dashboard-specific styles */
+
+/* Layout */
+.dashboard-layout {
+  @apply min-h-screen bg-background;
+}
+
+.dashboard-sidebar {
+  @apply w-64 h-screen bg-card border-r border-border sticky top-0;
+}
+
+.dashboard-main {
+  @apply flex-1 overflow-hidden;
+}
+
+.dashboard-header {
+  @apply h-16 bg-card border-b border-border px-6 flex items-center justify-between;
+}
+
+.dashboard-content {
+  @apply p-6 overflow-y-auto;
+}
+
+/* Grid layouts */
+.dashboard-grid {
+  @apply grid gap-6;
+}
+
+.dashboard-grid-1 {
+  @apply grid-cols-1;
+}
+
+.dashboard-grid-2 {
+  @apply grid-cols-1 md:grid-cols-2;
+}
+
+.dashboard-grid-3 {
+  @apply grid-cols-1 md:grid-cols-2 lg:grid-cols-3;
+}
+
+.dashboard-grid-4 {
+  @apply grid-cols-1 md:grid-cols-2 lg:grid-cols-4;
+}
+
+/* Stats cards */
+.stats-card {
+  @apply bg-card rounded-lg border border-border p-6;
+}
+
+.stats-card-header {
+  @apply flex items-center justify-between;
+}
+
+.stats-card-title {
+  @apply text-sm font-medium text-muted-foreground;
+}
+
+.stats-card-icon {
+  @apply w-4 h-4 text-muted-foreground;
+}
+
+.stats-card-value {
+  @apply text-2xl font-bold mt-2;
+}
+
+.stats-card-change {
+  @apply text-xs text-muted-foreground mt-1;
+}
+
+.stats-card-trend-up {
+  @apply text-green-600 dark:text-green-400;
+}
+
+.stats-card-trend-down {
+  @apply text-red-600 dark:text-red-400;
+}
+
+/* Charts section */
+.charts-section {
+  @apply space-y-6;
+}
+
+.chart-card {
+  @apply bg-card rounded-lg border border-border p-6;
+}
+
+.chart-header {
+  @apply flex items-center justify-between mb-4;
+}
+
+.chart-title {
+  @apply text-lg font-semibold;
+}
+
+.chart-description {
+  @apply text-sm text-muted-foreground;
+}
+
+.chart-controls {
+  @apply flex items-center gap-2;
+}
+
+.chart-wrapper {
+  @apply w-full h-80;
+}
+
+/* File list styles */
+.file-list {
+  @apply space-y-2;
+}
+
+.file-list-item {
+  @apply flex items-center justify-between p-4 bg-card rounded-lg border border-border hover:bg-accent/50 transition-colors;
+}
+
+.file-list-item-main {
+  @apply flex items-center gap-3;
+}
+
+.file-list-item-icon {
+  @apply w-8 h-8 rounded bg-muted flex items-center justify-center;
+}
+
+.file-list-item-info {
+  @apply flex-1;
+}
+
+.file-list-item-name {
+  @apply font-medium;
+}
+
+.file-list-item-meta {
+  @apply text-sm text-muted-foreground;
+}
+
+.file-list-item-actions {
+  @apply flex items-center gap-2;
+}
+
+/* Filter panel */
+.filter-panel {
+  @apply bg-card rounded-lg border border-border p-4;
+}
+
+.filter-panel-header {
+  @apply flex items-center justify-between mb-4;
+}
+
+.filter-panel-title {
+  @apply font-medium;
+}
+
+.filter-panel-clear {
+  @apply text-sm text-muted-foreground hover:text-foreground cursor-pointer;
+}
+
+.filter-group {
+  @apply space-y-3;
+}
+
+.filter-group-title {
+  @apply text-sm font-medium text-muted-foreground uppercase tracking-wide;
+}
+
+.filter-options {
+  @apply space-y-2;
+}
+
+.filter-option {
+  @apply flex items-center space-x-2;
+}
+
+/* Progress tracking */
+.progress-container {
+  @apply space-y-2;
+}
+
+.progress-header {
+  @apply flex items-center justify-between text-sm;
+}
+
+.progress-label {
+  @apply font-medium;
+}
+
+.progress-percentage {
+  @apply text-muted-foreground;
+}
+
+.progress-bar {
+  @apply w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2;
+}
+
+.progress-fill {
+  @apply h-2 rounded-full transition-all duration-300;
+}
+
+/* Notification styles */
+.notification-container {
+  @apply fixed top-4 right-4 z-50 space-y-2;
+}
+
+.notification {
+  @apply bg-card border border-border rounded-lg shadow-lg p-4 min-w-80 max-w-md;
+}
+
+.notification-success {
+  @apply border-l-4 border-l-green-500;
+}
+
+.notification-error {
+  @apply border-l-4 border-l-red-500;
+}
+
+.notification-warning {
+  @apply border-l-4 border-l-yellow-500;
+}
+
+.notification-info {
+  @apply border-l-4 border-l-blue-500;
+}
+
+.notification-header {
+  @apply flex items-center justify-between;
+}
+
+.notification-title {
+  @apply font-medium;
+}
+
+.notification-close {
+  @apply text-muted-foreground hover:text-foreground cursor-pointer;
+}
+
+.notification-content {
+  @apply text-sm text-muted-foreground mt-1;
+}
+
+/* Sidebar styles */
+.sidebar-section {
+  @apply px-4 py-6;
+}
+
+.sidebar-section-title {
+  @apply text-xs font-semibold text-muted-foreground uppercase tracking-wide mb-3;
+}
+
+.sidebar-nav {
+  @apply space-y-1;
+}
+
+.sidebar-nav-item {
+  @apply flex items-center px-3 py-2 text-sm font-medium rounded-md transition-colors;
+}
+
+.sidebar-nav-item-active {
+  @apply bg-primary text-primary-foreground;
+}
+
+.sidebar-nav-item-inactive {
+  @apply text-muted-foreground hover:text-foreground hover:bg-muted;
+}
+
+.sidebar-nav-icon {
+  @apply mr-3 h-4 w-4 flex-shrink-0;
+}
+
+/* Report comparison styles */
+.comparison-container {
+  @apply grid grid-cols-1 md:grid-cols-2 gap-6;
+}
+
+.comparison-section {
+  @apply bg-card rounded-lg border border-border p-6;
+}
+
+.comparison-header {
+  @apply text-center mb-4;
+}
+
+.comparison-title {
+  @apply text-lg font-semibold;
+}
+
+.comparison-subtitle {
+  @apply text-sm text-muted-foreground;
+}
+
+.comparison-metrics {
+  @apply space-y-4;
+}
+
+.comparison-metric {
+  @apply flex justify-between items-center;
+}
+
+.comparison-metric-label {
+  @apply text-sm font-medium;
+}
+
+.comparison-metric-value {
+  @apply text-lg font-bold;
+}
+
+.comparison-changes {
+  @apply mt-6 pt-6 border-t border-border;
+}
+
+.comparison-change-item {
+  @apply flex items-center justify-between py-2;
+}
+
+.comparison-change-positive {
+  @apply text-green-600 dark:text-green-400;
+}
+
+.comparison-change-negative {
+  @apply text-red-600 dark:text-red-400;
+}
+
+.comparison-change-neutral {
+  @apply text-muted-foreground;
+}
+
+/* Technology distribution */
+.tech-distribution {
+  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4;
+}
+
+.tech-item {
+  @apply bg-card rounded-lg border border-border p-4 text-center;
+}
+
+.tech-icon {
+  @apply w-8 h-8 mx-auto mb-2;
+}
+
+.tech-name {
+  @apply font-medium;
+}
+
+.tech-count {
+  @apply text-2xl font-bold mt-1;
+}
+
+.tech-percentage {
+  @apply text-sm text-muted-foreground;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .dashboard-sidebar {
+    @apply w-full h-auto relative;
+  }
+  
+  .dashboard-grid-2,
+  .dashboard-grid-3,
+  .dashboard-grid-4 {
+    @apply grid-cols-1;
+  }
+  
+  .comparison-container {
+    @apply grid-cols-1;
+  }
+  
+  .tech-distribution {
+    @apply grid-cols-2;
+  }
+}
+
+@media (max-width: 640px) {
+  .dashboard-content {
+    @apply p-4;
+  }
+  
+  .stats-card {
+    @apply p-4;
+  }
+  
+  .chart-card {
+    @apply p-4;
+  }
+  
+  .tech-distribution {
+    @apply grid-cols-1;
+  }
+}

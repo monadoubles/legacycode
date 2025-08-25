@@ -1,0 +1,294 @@
+/* Component-specific styles */
+
+/* Button variants */
+.btn-primary {
+  @apply bg-primary text-primary-foreground hover:bg-primary/90;
+}
+
+.btn-secondary {
+  @apply bg-secondary text-secondary-foreground hover:bg-secondary/80;
+}
+
+.btn-outline {
+  @apply border border-input bg-background hover:bg-accent hover:text-accent-foreground;
+}
+
+.btn-ghost {
+  @apply hover:bg-accent hover:text-accent-foreground;
+}
+
+.btn-destructive {
+  @apply bg-destructive text-destructive-foreground hover:bg-destructive/90;
+}
+
+/* Card styles */
+.card-hover {
+  @apply transition-all duration-200 hover:shadow-lg hover:scale-[1.01];
+}
+
+.card-complexity-low {
+  @apply border-l-4 border-l-green-500 bg-green-50 dark:bg-green-900/20;
+}
+
+.card-complexity-medium {
+  @apply border-l-4 border-l-yellow-500 bg-yellow-50 dark:bg-yellow-900/20;
+}
+
+.card-complexity-high {
+  @apply border-l-4 border-l-red-500 bg-red-50 dark:bg-red-900/20;
+}
+
+.card-complexity-critical {
+  @apply border-l-4 border-l-red-800 bg-red-100 dark:bg-red-800/20;
+}
+
+/* Progress bar styles */
+.progress-low {
+  @apply bg-green-500;
+}
+
+.progress-medium {
+  @apply bg-yellow-500;
+}
+
+.progress-high {
+  @apply bg-red-500;
+}
+
+.progress-critical {
+  @apply bg-red-800;
+}
+
+/* Badge variants */
+.badge-complexity-low {
+  @apply bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400;
+}
+
+.badge-complexity-medium {
+  @apply bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-400;
+}
+
+.badge-complexity-high {
+  @apply bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-400;
+}
+
+.badge-complexity-critical {
+  @apply bg-red-200 text-red-900 dark:bg-red-800/30 dark:text-red-300;
+}
+
+.badge-technology-perl {
+  @apply bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-400;
+}
+
+.badge-technology-tibco {
+  @apply bg-orange-100 text-orange-800 dark:bg-orange-900/30 dark:text-orange-400;
+}
+
+.badge-technology-pentaho {
+  @apply bg-purple-100 text-purple-800 dark:bg-purple-900/30 dark:text-purple-400;
+}
+
+/* Loading states */
+.loading-spinner {
+  @apply animate-spin rounded-full border-2 border-gray-300 border-t-blue-600;
+}
+
+.loading-pulse {
+  @apply animate-pulse bg-gray-200 dark:bg-gray-700 rounded;
+}
+
+.loading-dots::after {
+  content: '';
+  animation: loading-dots 1.5s infinite;
+}
+
+@keyframes loading-dots {
+  0%, 20% { content: '.'; }
+  40% { content: '..'; }
+  60%, 100% { content: '...'; }
+}
+
+/* File upload styles */
+.upload-zone {
+  @apply border-2 border-dashed border-gray-300 rounded-lg p-8 text-center transition-colors;
+}
+
+.upload-zone-active {
+  @apply border-primary bg-primary/5;
+}
+
+.upload-zone-error {
+  @apply border-red-500 bg-red-50 dark:bg-red-900/20;
+}
+
+/* Metric display styles */
+.metric-card {
+  @apply bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm border;
+}
+
+.metric-value {
+  @apply text-3xl font-bold;
+}
+
+.metric-label {
+  @apply text-sm font-medium text-gray-500 dark:text-gray-400;
+}
+
+.metric-change-positive {
+  @apply text-green-600 dark:text-green-400;
+}
+
+.metric-change-negative {
+  @apply text-red-600 dark:text-red-400;
+}
+
+/* Navigation styles */
+.nav-link {
+  @apply flex items-center px-3 py-2 text-sm font-medium rounded-md transition-colors;
+}
+
+.nav-link-active {
+  @apply bg-primary text-primary-foreground;
+}
+
+.nav-link-inactive {
+  @apply text-muted-foreground hover:text-foreground hover:bg-muted;
+}
+
+/* Table styles */
+.table-header {
+  @apply bg-gray-50 dark:bg-gray-900/50 font-medium text-left;
+}
+
+.table-row {
+  @apply border-b border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-900/50;
+}
+
+.table-cell {
+  @apply px-4 py-3 text-sm;
+}
+
+/* Form styles */
+.form-field {
+  @apply space-y-2;
+}
+
+.form-label {
+  @apply text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70;
+}
+
+.form-input {
+  @apply flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50;
+}
+
+.form-error {
+  @apply text-sm text-red-600 dark:text-red-400;
+}
+
+.form-help {
+  @apply text-sm text-muted-foreground;
+}
+
+/* Chart container styles */
+.chart-container {
+  @apply w-full h-64 md:h-80 lg:h-96;
+}
+
+.chart-legend {
+  @apply flex flex-wrap gap-2 mt-4;
+}
+
+.chart-legend-item {
+  @apply flex items-center gap-2 text-sm;
+}
+
+.chart-legend-color {
+  @apply w-3 h-3 rounded-full;
+}
+
+/* Responsive utilities */
+.mobile-hidden {
+  @apply hidden md:block;
+}
+
+.mobile-only {
+  @apply block md:hidden;
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  .print-break-before {
+    page-break-before: always;
+  }
+  
+  .print-break-after {
+    page-break-after: always;
+  }
+}
+
+/* Animation utilities */
+.fade-in {
+  animation: fade-in 0.3s ease-in-out;
+}
+
+.slide-up {
+  animation: slide-up 0.3s ease-out;
+}
+
+.scale-in {
+  animation: scale-in 0.2s ease-out;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Scrollbar styles */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(156 163 175) transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgb(156 163 175);
+  border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(107 114 128);
+}

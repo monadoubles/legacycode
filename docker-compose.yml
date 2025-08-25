@@ -1,0 +1,73 @@
+version: '3.8'
+
+services:
+  # PostgreSQL Database
+  postgres:
+    image: postgres:15-alpine
+    container_name: legacy-analyzer-db
+    environment:
+      POSTGRES_DB: legacy_code_analyzer
+      POSTGRES_USER: analyzer_user
+      POSTGRES_PASSWORD: analyzer_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./scripts/init-db.sql:/docker-entrypoint-initdb.d/init-db.sql
+    networks:
+      - legacy-analyzer-network
+
+  # Ollama for AI Analysis
+  ollama:
+    image: ollama/ollama:latest
+    container_name: legacy-analyzer-ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+    networks:
+      - legacy-analyzer-network
+    environment:
+      - OLLAMA_HOST=0.0.0.0
+
+  # Redis for Caching (Optional)
+  redis:
+    image: redis:7-alpine
+    container_name: legacy-analyzer-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - legacy-analyzer-network
+
+  # Next.js Application
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: legacy-analyzer-app
+    ports:
+      - "3000:3000"
+    environment:
+      - DATABASE_URL=postgresql://analyzer_user:analyzer_password@postgres:5432/legacy_code_analyzer
+      - OLLAMA_API_URL=http://ollama:11434
+      - REDIS_URL=redis://redis:6379
+      - NODE_ENV=production
+    depends_on:
+      - postgres
+      - ollama
+      - redis
+    volumes:
+      - ./uploads:/app/uploads
+    networks:
+      - legacy-analyzer-network
+
+volumes:
+  postgres_data:
+  ollama_data:
+  redis_data:
+
+networks:
+  legacy-analyzer-network:
+    driver: bridge

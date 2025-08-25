@@ -1,0 +1,284 @@
+/* Syntax highlighting styles for code display */
+
+.code-container {
+  @apply bg-gray-50 dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-700 overflow-hidden;
+}
+
+.code-header {
+  @apply bg-gray-100 dark:bg-gray-800 px-4 py-2 border-b border-gray-200 dark:border-gray-700 flex items-center justify-between;
+}
+
+.code-filename {
+  @apply text-sm font-mono text-gray-700 dark:text-gray-300;
+}
+
+.code-actions {
+  @apply flex items-center gap-2;
+}
+
+.code-copy-btn {
+  @apply text-xs px-2 py-1 bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-400 rounded hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors;
+}
+
+.code-content {
+  @apply p-4 overflow-x-auto;
+}
+
+.code-line-numbers {
+  @apply select-none text-gray-400 dark:text-gray-600 text-right pr-4 border-r border-gray-200 dark:border-gray-700;
+}
+
+.code-lines {
+  @apply font-mono text-sm leading-relaxed;
+}
+
+.code-line {
+  @apply block;
+}
+
+.code-line-highlighted {
+  @apply bg-yellow-100 dark:bg-yellow-900/30 -mx-4 px-4;
+}
+
+.code-line-error {
+  @apply bg-red-100 dark:bg-red-900/30 border-l-4 border-red-500 -mx-4 px-4;
+}
+
+.code-line-warning {
+  @apply bg-yellow-100 dark:bg-yellow-900/30 border-l-4 border-yellow-500 -mx-4 px-4;
+}
+
+/* Perl syntax highlighting */
+.perl-keyword {
+  @apply text-blue-600 dark:text-blue-400 font-semibold;
+}
+
+.perl-string {
+  @apply text-green-600 dark:text-green-400;
+}
+
+.perl-comment {
+  @apply text-gray-500 dark:text-gray-400 italic;
+}
+
+.perl-variable {
+  @apply text-purple-600 dark:text-purple-400;
+}
+
+.perl-operator {
+  @apply text-orange-600 dark:text-orange-400;
+}
+
+.perl-number {
+  @apply text-red-600 dark:text-red-400;
+}
+
+.perl-regex {
+  @apply text-pink-600 dark:text-pink-400;
+}
+
+.perl-subroutine {
+  @apply text-blue-700 dark:text-blue-300 font-medium;
+}
+
+/* XML/TIBCO syntax highlighting */
+.xml-tag {
+  @apply text-blue-600 dark:text-blue-400;
+}
+
+.xml-attribute {
+  @apply text-purple-600 dark:text-purple-400;
+}
+
+.xml-attribute-value {
+  @apply text-green-600 dark:text-green-400;
+}
+
+.xml-comment {
+  @apply text-gray-500 dark:text-gray-400 italic;
+}
+
+.xml-cdata {
+  @apply text-orange-600 dark:text-orange-400;
+}
+
+.xml-namespace {
+  @apply text-blue-700 dark:text-blue-300;
+}
+
+/* Pentaho syntax highlighting */
+.pentaho-element {
+  @apply text-blue-600 dark:text-blue-400;
+}
+
+.pentaho-attribute {
+  @apply text-purple-600 dark:text-purple-400;
+}
+
+.pentaho-value {
+  @apply text-green-600 dark:text-green-400;
+}
+
+.pentaho-step {
+  @apply text-orange-600 dark:text-orange-400 font-medium;
+}
+
+.pentaho-connection {
+  @apply text-red-600 dark:text-red-400;
+}
+
+/* Generic syntax highlighting */
+.syntax-keyword {
+  @apply text-blue-600 dark:text-blue-400 font-semibold;
+}
+
+.syntax-string {
+  @apply text-green-600 dark:text-green-400;
+}
+
+.syntax-number {
+  @apply text-red-600 dark:text-red-400;
+}
+
+.syntax-comment {
+  @apply text-gray-500 dark:text-gray-400 italic;
+}
+
+.syntax-operator {
+  @apply text-orange-600 dark:text-orange-400;
+}
+
+.syntax-function {
+  @apply text-blue-700 dark:text-blue-300 font-medium;
+}
+
+.syntax-variable {
+  @apply text-purple-600 dark:text-purple-400;
+}
+
+.syntax-special {
+  @apply text-pink-600 dark:text-pink-400;
+}
+
+/* Issue annotations */
+.code-annotation {
+  @apply relative;
+}
+
+.code-annotation-marker {
+  @apply absolute -left-2 top-0 w-2 h-full;
+}
+
+.code-annotation-security {
+  @apply bg-red-500;
+}
+
+.code-annotation-performance {
+  @apply bg-yellow-500;
+}
+
+.code-annotation-style {
+  @apply bg-blue-500;
+}
+
+.code-annotation-suggestion {
+  @apply bg-green-500;
+}
+
+.code-annotation-tooltip {
+  @apply absolute left-full ml-2 top-0 bg-gray-800 text-white text-xs p-2 rounded shadow-lg z-10 min-w-48 max-w-xs opacity-0 pointer-events-none transition-opacity;
+}
+
+.code-annotation:hover .code-annotation-tooltip {
+  @apply opacity-100 pointer-events-auto;
+}
+
+/* Diff highlighting */
+.code-diff-added {
+  @apply bg-green-100 dark:bg-green-900/30 border-l-4 border-green-500;
+}
+
+.code-diff-removed {
+  @apply bg-red-100 dark:bg-red-900/30 border-l-4 border-red-500;
+}
+
+.code-diff-modified {
+  @apply bg-blue-100 dark:bg-blue-900/30 border-l-4 border-blue-500;
+}
+
+/* Search highlighting */
+.code-search-result {
+  @apply bg-yellow-300 dark:bg-yellow-600/50 text-black dark:text-white rounded px-1;
+}
+
+.code-search-current {
+  @apply bg-orange-400 dark:bg-orange-500/70 text-black dark:text-white rounded px-1;
+}
+
+/* Print styles for code */
+@media print {
+  .code-container {
+    @apply border border-gray-400;
+  }
+  
+  .code-header {
+    @apply bg-gray-100 border-b border-gray-400;
+  }
+  
+  .code-actions {
+    @apply hidden;
+  }
+  
+  .syntax-keyword,
+  .perl-keyword {
+    @apply text-black font-bold;
+  }
+  
+  .syntax-string,
+  .perl-string {
+    @apply text-black;
+  }
+  
+  .syntax-comment,
+  .perl-comment {
+    @apply text-gray-600 italic;
+  }
+}
+
+/* Accessibility improvements */
+.code-content:focus {
+  @apply outline-none ring-2 ring-blue-500 ring-offset-2;
+}
+
+.code-line[tabindex]:focus {
+  @apply outline-none bg-blue-100 dark:bg-blue-900/30;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .syntax-keyword,
+  .perl-keyword {
+    @apply text-black dark:text-white font-black;
+  }
+  
+  .syntax-string,
+  .perl-string {
+    @apply text-black dark:text-white;
+  }
+  
+  .syntax-comment,
+  .perl-comment {
+    @apply text-gray-800 dark:text-gray-200;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .code-annotation-tooltip {
+    @apply transition-none;
+  }
+  
+  .code-copy-btn {
+    @apply transition-none;
+  }
+}
