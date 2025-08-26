@@ -33,7 +33,7 @@ First, install **Ollama** if it's not already installed:
 Then, pull the required **Code Llama** model:
 
 ```bash
-ollama pull codellama:7b-instruct
+ollama pull codellama:13b-instruct
 ```
 
 Verify that the model is installed:
