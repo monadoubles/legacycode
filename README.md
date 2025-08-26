@@ -33,7 +33,7 @@ First, install **Ollama** if it's not already installed:
 Then, pull the required **Code Llama** model:
 
 ```bash
-ollama pull codellama:13b-instruct
+ollama pull codellama:7b-instruct
 ```
 
 Verify that the model is installed:
@@ -86,7 +86,7 @@ Open your browser and go to: [http://localhost:3000](http://localhost:3000)
 
 ## 🤖 AI Model Usage
 
-This project uses **Code Llama 13B Instruct** for code analysis tasks. Ensure the model is available in Ollama before using the analysis features.
+This project uses **Code Llama 7B Instruct** for code analysis tasks. Ensure the model is available in Ollama before using the analysis features.
 
 ---
 
