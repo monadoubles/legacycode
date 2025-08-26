@@ -86,7 +86,7 @@ Open your browser and go to: [http://localhost:3000](http://localhost:3000)
 
 ## 🤖 AI Model Usage
 
-This project uses **Code Llama 7B Instruct** for code analysis tasks. Ensure the model is available in Ollama before using the analysis features.
+This project uses **Code Llama 13B Instruct** for code analysis tasks. Ensure the model is available in Ollama before using the analysis features.
 
 ---
 
